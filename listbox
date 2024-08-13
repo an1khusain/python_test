@@ -1,0 +1,52 @@
+from tkinter import *
+
+window = Tk()
+
+
+def add():
+    listbox.insert(listbox.size(), entry.get())
+    listbox.config(height=listbox.size())
+
+
+def delete():
+    for index in listbox.curselection():
+        listbox.delete(index)
+    listbox.config(height=listbox.size())
+
+
+def submit():
+    food = []
+    for index in listbox.curselection():
+        food.insert(index, listbox.get(index))
+    print('You ordered: ')
+    for index in food:
+        print(index)
+
+
+listbox = Listbox(window,
+                  font=('Comic Sans', 35, 'bold'),
+                  bg='#4af0ff',
+                  width=12,
+                  selectmode=MULTIPLE)
+listbox.pack()
+listbox.config(height=listbox.size())
+
+listbox.insert(0, 'Pizza')
+listbox.insert(1, 'Pasta')
+listbox.insert(2, 'Burger')
+listbox.insert(3, 'Soda')
+listbox.insert(4, 'Salad')
+
+entry = Entry(window)
+entry.pack()
+
+addButton = Button(window, text='Add', command=add)
+addButton.pack()
+
+deleteButton = Button(window, text='Delete', command=delete)
+deleteButton.pack()
+
+submitButton = Button(window, text='Submit', command=submit)
+submitButton.pack()
+
+window.mainloop()
