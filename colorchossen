@@ -1,0 +1,17 @@
+from tkinter import *
+from tkinter import colorchooser
+
+
+def color():
+    coloor = colorchooser.askcolor()
+    coloorHex = coloor[1]
+    window.config(bg=str(coloorHex))
+
+
+window = Tk()
+
+button = Button(window, text='Color', command=color)
+button.pack()
+
+window.geometry('320x320')
+window.mainloop()
