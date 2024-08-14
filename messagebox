@@ -1,0 +1,37 @@
+from tkinter import *
+from tkinter import messagebox
+
+
+def click():
+    # messagebox.showinfo(title='Showinfo', message='You have a message')
+
+    # messagebox.showwarning(title='WARNING', message='You have a Warning')
+
+    # messagebox.showerror(title='ERROR', message='You have a message error')
+
+    # if messagebox.askokcancel(title='Ask_OkCancel', message='You like Ok or Cancel?'):
+        # print('You like OK')
+    # else:
+        # print('You are going to cancel')
+
+    # answer = messagebox.askyesnocancel(title='Ask_YesNoCancel', message='You like Yes, No or Cancel ?')
+    # if (answer == True):
+        # print('You like Yes')
+    # elif (answer == False):
+       # print('You dont like')
+    # else:
+        # print('You are going to cancel')
+
+    answer = messagebox.askquestion(title='Ask_Question', message='Do you have any Question?')
+    if answer == 'yes':
+        print('You have a Question')
+    else:
+        print('You dont have any question')
+
+
+window = Tk()
+
+button = Button(window, text='Click me', command=click)
+button.pack()
+
+window.mainloop()
