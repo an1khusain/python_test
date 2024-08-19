@@ -1,0 +1,49 @@
+from tkinter import *
+
+
+def openFile():
+    print('File is opened')
+
+
+def saveFile():
+    print('File is saved')
+
+
+def cutFile():
+    print('File is cutted')
+
+
+def copyFile():
+    print('File is copied')
+
+
+def pasteFile():
+    print("File is pasted")
+
+
+window = Tk()
+
+open = PhotoImage(file='folder.png')
+save = PhotoImage(file='bookmark.png')
+exit = PhotoImage(file='reject.png')
+cut = PhotoImage(file='scissors.png')
+copy = PhotoImage(file='copy.png')
+paste = PhotoImage(file='paste.png')
+
+menubar = Menu(window)
+window.config(menu=menubar)
+
+file_menu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label='File', menu=file_menu)
+file_menu.add_command(label='Open', command=openFile, image=open, compound='left')
+file_menu.add_command(label='Save', command=saveFile, image=save, compound='left')
+file_menu.add_separator()
+file_menu.add_command(label='Exit', image=exit, compound='left')
+
+edit_menu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label='Edit', menu=edit_menu)
+edit_menu.add_command(label='Cut', command=cutFile, image=cut, compound='left')
+edit_menu.add_command(label='Copy', command=copyFile, image=copy, compound='left')
+edit_menu.add_command(label='Paste', command=pasteFile, image=paste, compound='left')
+
+window.mainloop()
