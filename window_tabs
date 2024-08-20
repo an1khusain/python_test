@@ -1,0 +1,20 @@
+from tkinter import *
+from tkinter import ttk
+
+window = Tk()
+
+notebook = ttk.Notebook(window)   # widget that manages the collection of windows/displays
+
+tab1 = Frame(notebook)  # new frame for Tab_1
+tab2 = Frame(notebook)  # new frame for Tab_2
+
+notebook.add(tab1, text='Tab_1')
+notebook.add(tab2, text='Tab_2')
+notebook.pack(expand=True, fill='both')  # Expand to fill any space not otherwise used
+                                         # Fill space on x and y axis
+
+Label(tab1, text='Hello, that is tab#1', height=25, width=50).pack()
+Label(tab2, text='Bye, that is tab#2', height=25, width=50).pack()
+
+
+window.mainloop()
