@@ -1,0 +1,32 @@
+from tkinter import *
+from tkinter.ttk import *
+import time
+
+
+def download():
+    GB = 100
+    Download = 0
+    speed = 1
+    while Download < GB:
+        time.sleep(0.10)
+        bar['value'] += (speed / GB) * 100
+        Download += speed
+        percent.set(str(int((Download/GB)*100))+'%')
+        text.set(str(Download)+'/'+str(GB)+' GB Completed')
+        window.update_idletasks()
+
+
+window = Tk()
+
+percent = StringVar()
+text = StringVar()
+
+bar = Progressbar(window, orient=HORIZONTAL, length=250)
+bar.pack(pady=15)
+
+Label(window, textvariable=percent).pack()
+Label(window, textvariable=text).pack()
+
+Button(window, text='Download', command=download).pack()
+
+window.mainloop()
