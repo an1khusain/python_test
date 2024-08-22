@@ -3,6 +3,7 @@ from tkinter.ttk import *
 import time
 
 
+
 def download():
     GB = 100
     Download = 0
