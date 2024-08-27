@@ -1,0 +1,18 @@
+from tkinter import *
+
+
+def doIt(event):
+    print('Mouse Coordinates: ' + str(event.x) + ',' + str(event.y))
+
+
+window = Tk()
+
+# window.bind('<Button-1>', doIt)
+# window.bind('<Button-2>', doIt)
+# window.bind('<Button-3>', doIt)
+# window.bind('<ButtonRelease>', doIt)
+# window.bind('<Enter>', doIt)
+# window.bind('<Leave>', doIt)
+window.bind('<Motion>', doIt)
+
+window.mainloop()
