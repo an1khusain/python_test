@@ -1,0 +1,35 @@
+import time
+from datetime import datetime
+from tkinter import *
+from time import *
+
+
+def again():
+    now = datetime.now()
+    time_string = now.strftime("%I:%M:%S %p")
+    time_label.config(text=time_string)
+
+    day_string = now.strftime("%A")
+    day_label.config(text=day_string)
+
+    date_string = now.strftime("%d %b, %Y")
+    date_label.config(text=date_string)
+
+
+    time_label.after(1000, again)
+
+
+window = Tk()
+
+time_label = Label(window, font=('Arial', 50), fg='#00ff0d', bg='#000000')
+time_label.pack()
+
+day_label = Label(window, font=('Ink Free', 30), fg='#000000')
+day_label.pack()
+
+date_label = Label(window, font=('Ink Free', 40), fg='#000000')
+date_label.pack()
+
+again()
+
+window.mainloop()
